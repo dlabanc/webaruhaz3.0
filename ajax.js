@@ -48,7 +48,6 @@ class AjaxHivas {
     $.ajax({
       url: fajlnev+"/"+id,
       type:"DELETE",
-      data: adat,
       success: function (result) {
         
       },

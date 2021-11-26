@@ -1,26 +1,32 @@
-$(function() {
-    let apiVegpont = "http://localhost:3000/termekek";
+$(function () {
+  let apiVegpont = "http://localhost:3000/termekek";
 
-    const ajaxHivas = new AjaxHivas();
+  const ajaxHivas = new AjaxHivas();
 
-    ajaxHivas.getAjax(apiVegpont, termekLista)  
+  ajaxHivas.getAjax(apiVegpont, termekLista);
 
-    function termekLista(termekek) {
-        const szuloElem = $("table");
-        const sablonElem = $(".termek");
+  function termekLista(termekek) {
+    const szuloElem = $(".termekek");
+    const sablonElem = $("thead .termek");
 
-        termekek.forEach(function(elem) {
-            let node = sablonElem.clone().appendTo(szuloElem);
-            const obj = new TermekAdmin(node, elem);
+    szuloElem.empty();
+    sablonElem.show();
 
-        });
-        sablonElem.remove(); //sablonelem eltávolítása
-    }
-    $(window).on("torles", () => {
-        console.log("Töröltem magam!")
+    termekek.forEach(function (elem) {
+      let node = sablonElem.clone().appendTo(szuloElem);
+      const obj = new TermekAdmin(node, elem, elem.id);
+      console.log(obj);
     });
-    $(window).on("modositas", () => {
-        console.log("Módosítottam magam!")
-    });
+    sablonElem.hide(); //sablonelem eltávolítása
+  }
+  $(window).on("torles", (event) => {
+    ajaxHivas.deleteAjax(apiVegpont, event.detail.id);
+    ajaxHivas.getAjax(apiVegpont, termekLista);
+    
+  });
 
+  $(window).on("modositas", (event) => {
+    console.log($("modositas"));
+    
+  });
 });

@@ -1,6 +1,10 @@
 $(function () {
   const kosar = new Kosar();
 
+  var ujUrl;
+  var ar = $("#ar").val();
+  var ertek = $("#rendezes").val();
+
   const ajaxHivas = new AjaxHivas();
 
   let apiVegpont = "http://localhost:3000/termekek";
@@ -33,37 +37,27 @@ $(function () {
   });
 
   $("#rendezes").change(function () {
-    var ar = $("#ar").val();
-    console.log(ar)
-    var ujUrl = apiVegpont;
-    var ertek = $("#rendezes").val();
-    if (ertek === "novekvo") {
-      ujUrl = apiVegpont + "?_sort=nev&_order=asc?ar_gte=0&ar_lte="+ar;
-    } else if (ertek === "csokkeno") {
-      ujUrl = apiVegpont + "?_sort=nev&_order=desc?ar_gte=0&ar_lte="+ar;
-    }
-
-    ajaxHivas.getAjax(ujUrl, termekLista);
+    rendezesSzures()
   });
-
-  
 
   $("#ar").on("input", function () {
-    var ertek = $("#rendezes").val();
-    var ar = $("#ar").val();
+    ar = $("#ar").val();
     $("#kivalasztottAr").html("Maximum ár: " + ar + " Ft");
   });
-  
 
   $("#ar").on("change", function () {
-    var ertek = $("#rendezes").val();
-    var ar = $("#ar").val();
-    if (ertek === "novekvo") {
-      ujUrl = apiVegpont + "?_sort=nev&_order=asc?ar_gte=0&ar_lte="+ar;
-    } else if (ertek === "csokkeno") {
+    rendezesSzures()
+  });
 
-      ujUrl = apiVegpont + "?ar_gte=0&ar_lte="+ar+"?_sort=nev&_order=desc"
+  function rendezesSzures() {
+    ujUrl = apiVegpont;
+    ar = $("#ar").val();
+    ertek = $("#rendezes").val();
+    if (ertek === "novekvo") {
+      ujUrl = apiVegpont + "?_sort=nev&_order=asc&ar_gte=0&ar_lte=" + ar;
+    } else if (ertek === "csokkeno") {
+      ujUrl = apiVegpont + "?_sort=nev&_order=desc&ar_gte=0&ar_lte=" + ar;
     }
     ajaxHivas.getAjax(ujUrl, termekLista);
-  });
+  }
 });

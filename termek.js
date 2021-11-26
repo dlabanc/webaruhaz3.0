@@ -16,6 +16,8 @@ class Termek {
         this.termekAr.text(adat.ar + " Ft");
         this.termekKep.attr("src", adat.kep);
     }
+
+
     kattintasTrigger(esemenyneve) {
 
         let esemeny = new CustomEvent(esemenyneve, {
@@ -31,14 +33,17 @@ class Termek {
 }
 
 class TermekAdmin extends Termek {
-    constructor(node, adat) {
+    constructor(node, adat,id) {
         super(node, adat)
         this.termekKep = this.node.children(".kep ").children("img");
         this.termekTorles = this.node.children(".torles").children("button");
         this.termekModosit = this.node.children(".modosit").children("button");
         this.setAdat(this.adat);
+        this.termekModosit.attr("id",id);
+
         this.termekTorles.on("click ", () => {
             this.kattintasTrigger("torles");
+            
 
         });
         this.termekModosit.on("click ", () => {

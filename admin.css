@@ -12,3 +12,11 @@ th,
 td {
     border: 1px solid gray;
 }
+
+
+article {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 10px;
+}
