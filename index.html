@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="  szerkezet.css" />
+    <link rel="stylesheet" href="  kosar.css" />
+
+    <link rel="stylesheet" href="termekek.css" />
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="ajax.js"></script>
+    <script src="kosar.js"></script>
+    <script src="termek.js"></script>
+
+    <script src="script.js"></script>
+    <title>Webáruház 1.0</title>
+  </head>
+
+  <body>
+    <main>
+      <header></header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Kezdőlap</a></li>
+          <li><a href="fizetes.html">Fizetés</a></li>
+          <li></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+      <form>
+        <input type="text" id="nevKeres" placeholder="Keresett termék neve" />
+        <select id="rendezes" name="rendezes">
+            <option value="rendezes">-- Rendezés --</option>
+          <option value="novekvo">Név szerint növekvő</option>
+          <option value="csokkeno">Név szerint csökkenő</option>
+        </select>
+        <input type="range" id="ar" name="ar" min="0" max="50000" step=1000>
+        <span id = "kivalasztottAr">Maximum ár: 25000 Ft</span>
+
+        
+      </form>
+      <aside>
+        <section id="sablon">
+          <div class="termek">
+            <h3 class="termeknev">Lorem ipsum dolor</h3>
+            <img src="kepek/kep_1.jpeg" alt="" class="kep" />
+            <p class="leiras">
+              sit amet consectetur adipisicing elit. Sit natus nobis, earum
+              aperiam nesciunt incidunt vero omnis rerum necessitatibus, fugiat
+              doloribus cum sequi animi consectetur soluta! Saepe eaque sunt
+              aliquid? Dolorum magni inventore similique enim obcaecati eius
+              fugit animi, accusantium cum excepturi deserunt amet.
+            </p>
+            <button class="kosarba">Kosárba</button>
+            <span class="ar">125</span>
+          </div>
+        </section>
+      </aside>
+      <article>
+        <section class="termekek"></section>
+        <section class="kosar">
+          <h3>A Kosár tartalma</h3>
+          <div id="kosaram"></div>
+          <span id="osszar"></span>
+
+          <a href="fizetes.html"
+            ><button class="fizet">Tovább a fizetéshez...</button></a
+          >
+        </section>
+      </article>
+      <footer></footer>
+    </main>
+  </body>
+</html>

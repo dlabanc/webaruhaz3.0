@@ -1,0 +1,41 @@
+h2 {
+    border-top: 2px solid gray;
+}
+/*********** Kosár **********************/
+.kosar {
+    padding: 10px;
+    font-size: 10pt;
+    padding-bottom: 30px;
+}
+.kosar span {
+    text-align: right;
+    float: right;
+    padding-right: 50px;
+    border-top: 1px solid gray;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(122, 16, 16);
+}
+#kosaram table td {
+    border-bottom: 1px solid gray;
+}
+#kosaram table {
+    width: 100%;
+}
+#kosaram table tr td:nth-child(2) {
+    text-align: right;
+}
+#kosaram table tr:nth-child(odd) {
+    background: lightgrey;
+}
+
+.kosar button {
+    font-size: 8pt;
+    color: red;
+    font-weight: bold;
+    padding: 1px;
+    background-color: white;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    width: 15px;
+}

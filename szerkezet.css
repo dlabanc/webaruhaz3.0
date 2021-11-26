@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/************navigáció***************/
+nav ul {
+    display: grid;
+    grid-template-columns: 100px 100px auto 100px;
+    grid-gap: 5px;
+    padding: 0px;
+}
+nav ul li {
+    padding: 3px 10px;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    list-style-type: none;
+}
+nav ul li:hover {
+    background: lavender;
+}
+nav ul a {
+    text-decoration: none;
+}
+/***********oldalszerkezet**************/
+main {
+    /* min-width: 770px; */
+    margin: auto;
+    background-color: lavenderblush;
+}
+article {
+    display: grid;
+    grid-template-columns: 4fr 200px;
+    padding: 15px;
+    gap: 10px;
+}
+.kosar,
+.termekek div {
+    border: 1px solid lavender;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/************JS ben használt osztályok*******************/
+.kiemel {
+    background-color: cadetblue;
+    border: 3px solid rgb(28, 55, 56);
+    border-radius: 5px;
+}
+
+/************reszponzivitás****************/
+@media screen and (max-width: 770px) {
+    article {
+        grid-template-columns: auto;
+    }
+    .termekek {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .termekek {
+        grid-template-columns: 1fr;
+    }
+}

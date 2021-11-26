@@ -1,0 +1,14 @@
+img {
+    width: 100px;
+}
+table,
+tr {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+tr,
+th,
+td {
+    border: 1px solid gray;
+}

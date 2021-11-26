@@ -1,0 +1,43 @@
+/**********termékek *******************/
+.termekek {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    /*  grid-template-rows: repeat(4, 200px);*/
+}
+
+.termek {
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    font-size: 12pt;
+    padding-bottom: 30px;
+}
+.termek span {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    font-size: 10pt;
+    padding: 3px 5px;
+}
+
+.termek img {
+    border: 1px solid lavender;
+    border-radius: 5px;
+
+    width: 100%;
+}
+
+.termek button,
+.fizet {
+    font-size: 8pt;
+    padding: 3px;
+    margin: 2px;
+
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+

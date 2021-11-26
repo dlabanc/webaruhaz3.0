@@ -1,0 +1,36 @@
+/*********** Kosár **********************/
+.kosar {
+    position: relative;
+    padding: 10px;
+    font-size: 10pt;
+    padding-bottom: 30px;
+}
+.kosar span {
+    text-align: right;
+    float: right;
+    padding-right: 50px;
+    border-top: 1px solid gray;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(122, 16, 16);
+}
+.kosar table {
+    width: 100%;
+}
+.kosar table tr td:nth-child(2) {
+    text-align: right;
+}
+#kosaram button {
+    font-size: 8pt;
+    color: red;
+    font-weight: bold;
+    padding: 1px;
+    background-color: white;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    width: 15px;
+}
+.fizet {
+    font-weight: bold;
+    color: rgb(122, 16, 16);
+}
